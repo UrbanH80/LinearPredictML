@@ -1,0 +1,56 @@
+---
+title: "1920s Car Stopping Distance"
+author: "Clemens"
+date: "7/22/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 2: Overview
+
+Do you have a 1920's car that you enjoy driving but aren't sure how long it will take you to stop?  Use this application to predict stopping distance from a speed based on data from the cars dataset in R.
+
+
+## 3: Prediction Model Overview
+
+This code shows an example of how the linear model is used to predict stopping distance (ft) from car speed (mph)
+
+```{r, echo=TRUE}
+speed <- 17
+model <- lm(dist ~ speed, data = cars)
+prediction <- predict(model, newdata = data.frame(speed))
+```
+
+The predicted stopping distance is:
+```{r}
+prediction
+```
+
+## 4: Example Plot Generation
+
+Here is an example of the code for generating the resulting plot for a sample speed of 17 mph.  Note, this is reactive to a slider in the app
+
+```{r, echo = TRUE, eval=FALSE}
+speed <- 17
+plot(cars$speed, cars$dist, xlab="Speed (MPH)", ylab="Stopping Distance (ft)", bty = "n", pch = 16)
+abline(model, col = "red", lwd = 4)
+points(speed, prediction, col = "red", pch=19,cex=4)
+```
+
+## 5: Example Plot 
+
+This plot, which is reactive in the app, demonstrates the predicted stopping distance for a speed of 17 mph:
+```{r}
+plot(cars$speed, cars$dist, xlab="Speed (MPH)", ylab="Stopping Distance (ft)", bty = "n", pch = 16)
+abline(model, col = "red", lwd = 4)
+points(speed, prediction, col = "red", pch=19,cex=4)
+```
+
+Your plot is also showing your predicted stopping distance of:
+```{r}
+prediction
+```
+

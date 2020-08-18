@@ -1,0 +1,12 @@
+name: LinearPredict
+title: LinearPredict
+username:
+account: urbanh80
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2606256
+bundleId: 3427578
+url: https://urbanh80.shinyapps.io/LinearPredict/
+when: 1595533111.02057
+asMultiple: FALSE
+asStatic: FALSE
